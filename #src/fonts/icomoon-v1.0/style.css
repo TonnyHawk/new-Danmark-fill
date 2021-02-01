@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?shsk6r');
+  src:  url('fonts/icomoon.eot?shsk6r#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?shsk6r') format('truetype'),
+    url('fonts/icomoon.woff?shsk6r') format('woff'),
+    url('fonts/icomoon.svg?shsk6r#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-arrow-left:before {
+  content: "\e900";
+  color: #fff;
+}
+.ic-arrow-right:before {
+  content: "\e901";
+  color: #fff;
+}
+.ic-bag:before {
+  content: "\e902";
+}
+.ic-blade:before {
+  content: "\e903";
+  color: #fff;
+}
+.ic-fb:before {
+  content: "\e904";
+  color: #fff;
+}
+.ic-ig:before {
+  content: "\e905";
+  color: #fff;
+}
+.ic-logo:before {
+  content: "\e906";
+  color: #fff;
+}
+.ic-pin:before {
+  content: "\e907";
+}
+.ic-search:before {
+  content: "\e908";
+}
+.ic-translate:before {
+  content: "\e909";
+  color: #fff;
+}
+.ic-twitter:before {
+  content: "\e90a";
+  color: #fff;
+}
+.ic-youtube:before {
+  content: "\e90b";
+  color: #fff;
+}

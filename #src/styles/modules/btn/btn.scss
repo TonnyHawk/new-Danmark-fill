@@ -1,0 +1,11 @@
+.btn{
+   display: block;
+   color: white;
+   width: max-content;
+
+   &_accent{
+      padding: 10px 45px;
+      font-size: 18px;
+      background: $red;
+   }
+}
