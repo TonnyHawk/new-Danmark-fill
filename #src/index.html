@@ -3,78 +3,72 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="fonts/all fonts/stylesheet.css">
-   <link rel="stylesheet" href="fonts/icomoon-v1.0/style.css">
    <link rel="stylesheet" href="css/main.min.css">
-   <title>Philarmonic</title>
+   <title>Slider</title>
 </head>
 <body>
-   <nav class="nav" id='topmenu'>
-   <div class="nav__wrap">
-      <div class="nav__logo">
-         <img src="img/nav/logo.svg" alt="">
-      </div>
-      <div class="nav__btn">
-         <div class="hamburger hamburger--collapse nav__toggler">
-            <div class="hamburger-box">
-               <div class="hamburger-inner"></div>
-            </div>
+   <div id="slidex">
+      <div class="viewport">
+         <div class="viewport__slides">
+            <div class="viewport__slide"></div>
+            <div class="viewport__slide first"></div>
+            <div class="viewport__slide seccond"></div>
          </div>
       </div>
-      <div class="nav__main">
-         <div class="nav__menu">
-            <div class="nav__menu-item"><a href="" class="nav__link">Instrument</a></div>
-            <div class="nav__menu-item"><a href="" class="nav__link">Accessories</a></div>
-            <div class="nav__menu-item"><a href="" class="nav__link">Tickets</a></div>
-            <div class="nav__menu-item"><a href="" class="nav__link">Contacts</a></div>
-         </div>
-         <div class="nav__aside">
-            <a href="" class="nav__aside-item"><img src="img/nav/search.svg" alt=""></a>
-            <a href="" class="nav__aside-item"><img src="img/nav/bag.svg" alt=""></a>
-         </div>
+      <div class="btns">
+         <p class="btn btn_prev">prev</p>
+         <p class="btn btn_next">next</p>
       </div>
    </div>
-</nav>
-   <div class="head-instr slider">
-
-   <div class="slider__imgs">
-      <img src="img/head-instr/1.png" alt="" class="slider__img">
-      <div class="slider__indicators">
-         <div class="slider__indicator"></div>
-         <div class="slider__indicator"></div>
-         <div class="slider__indicator"></div>
-      </div>
-   </div>
-   <div class="slider__txts">
-      <div class="slider__text-block head-instr__text-block">
-         <h1 class="head-instr__title">Franch Horn</h1>
-         <div class="head-instr__tags">
-            <p class="head-instr__tag">Natural horn</p>
-            <p class="head-instr__tag">Vienna horn</p>
-            <p class="head-instr__tag">Wagner tuba</p>
-         </div>
-         <p class="head-instr__descr">The natural horn is the ancestor of the modern horn.
-            It is essentially descended from hunting horns,
-            with its pitch controlled by air speed, and the use
-            of the right hand moving around, as well as in and out of the bell.</p>
-         <div class="head-instr__colors">
-            <div class="head-instr__color bg-gray"></div>
-            <div class="head-instr__color bg-brown-gray"></div>
-         </div>
-         <a href="" class="head-instr__btn btn btn_accent">Add to card</a>
-      </div>
-   </div>
-   <div class="slider__nav">
-      <div class="slider__nav-el slider__nav-el_prev-slide"></div>
-      <div class="slider__nav-el slider__nav-el_next-slide"></div>
-   </div>
-
-</div>
-
    <script src="js/jquery.min.js"></script>
-   <script src="styles/modules/ibg/ibg.js"></script>
-   <script src="styles/modules/nav/nav.js"></script>
-   <script src="styles/modules/owl-carousel/owl.carousel.min.js"></script>
-   <script src="styles/modules/head-instr/head-instr.js"></script>
+   <!-- <script src="js/mySlider.js"></script> -->
+   <script>
+$(document).ready(function(){
+   function Slidex(args){
+      this.id = "#" + args.id;
+
+      let slideWidth = $(".viewport__slide").width();
+      let slideRowWidth = $(".viewport__slides").width();
+      let numOfSlides = $(".viewport__slide").length;
+      let lastSlideLeft = (slideWidth * (numOfSlides - 1)) * (-1);
+
+      $(this.id+' .btn_prev').click(function(){
+         changeSlide('prev');
+      });
+      $(this.id+' .btn_next').click(function(){
+         changeSlide('next');
+      });
+
+      let getLeft = ()=>{
+         let left = $(this.id+' .viewport__slides').css('left');
+         left = parseInt(left.slice(0, -2));
+         return left;
+      }
+
+      let changeSlide = (direction)=>{
+         let left = getLeft();
+         if(direction == 'next'){
+            if(left != lastSlideLeft){
+               $(this.id+' .viewport__slides').animate({'left': left - slideWidth}, 'fast');
+            }
+         }
+         else if(direction == 'prev'){
+            if(left != 0){
+               $(this.id+' .viewport__slides').animate({'left': left + slideWidth}, 'fast');
+            }
+         }
+      };
+
+      this.changeSlide = function(direction){
+         changeSlide(direction)
+      };
+   }
+
+
+   let slider = new Slidex({
+      id: 'slidex'
+   });
+});
+   </script>
 </body>
 </html>
