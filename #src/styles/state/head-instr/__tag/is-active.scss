@@ -1,0 +1,13 @@
+.head-instr{
+   &__tag{
+      &.is-active{
+         border-bottom: 1px solid white;
+      }
+   }
+
+   &__tab{
+      &.is-active{
+         display: block;
+      }
+   }
+}

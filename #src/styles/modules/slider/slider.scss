@@ -32,6 +32,12 @@
    &__indicator {
    }
 
+   // .slider__wrap
+
+   &__wrap{
+      min-width: 0;
+   }
+
    // .slider__txts
 
    &__txts {
@@ -43,6 +49,7 @@
          flex-basis: 35%;
       }
       @media(max-width: 850px){
+         position: relative;
          flex-basis: 100%;
          background: #0A0A0A;
          border-radius: 37px 34px 0px 0px;
