@@ -51,10 +51,10 @@ function html(){
 
 function watchFiles(){
    watch(sourceFold + '/**/*.scss', css);
-   watch([sourceFold + '/index.html']).on("change", series(browserSync.reload));
+   watch([sourceFold + "/**/*.html", "!"+sourceFold + '/index.html']).on("change", series(html, browserSync.reload));
 }
 
-let build = parallel(series(css, browsersync), watchFiles);
+let build = parallel(series(css, html, browsersync), watchFiles);
 
 exports.default = build;
 exports.css = series(css);

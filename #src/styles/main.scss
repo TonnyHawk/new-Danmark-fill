@@ -1,28 +1,24 @@
-.viewport {
-   overflow: hidden;
-   width: 500px;
-   height: 300px;
-   position: relative;
-   border: 1px solid red;
+@import 'basic/reset';
+@import 'basic/mixins';
+@import 'basic/colors';
 
-   // .viewport__slides
+@import 'layout/utility';
+@import 'layout/sections';
 
-   &__slides {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      display: flex;
-      background: black;
-   }
-
-   // .viewport__slide
-
-   &__slide {
-      height: 100%;
-      width: 500px;
-   }
+html{
+   font-family: 'gilroy';
+}
+body{
+   background: #0D0D0D;
 }
 
-.first{background: green;}
-.seccond{background: blue;}
+@import 'modules/ibg/ibg';
+@import 'modules/flag/flag';
+@import 'modules/slick/slick';
+
+@import 'modules/btn/btn';
+@import 'modules/nav/nav';
+@import 'modules/hamburger/hamburger.scss';
+@import 'modules/head-instr/head-instr';
+@import 'modules/head-instr/slick';
+@import 'modules/slider/slider';

@@ -7,6 +7,10 @@
 
    &__imgs {
       flex: 1 0 70%;
+      min-width: 0;
+      @media(max-width: 1170px){
+         flex-basis: 65%;
+      }
       @media(max-width: 850px){
          flex-basis: 100%;
       }
@@ -34,6 +38,10 @@
       flex: 1 0 30%;
       display: flex;
       align-items: center;
+      min-width: 0;
+      @media(max-width: 1170px){
+         flex-basis: 35%;
+      }
       @media(max-width: 850px){
          flex-basis: 100%;
          background: #0A0A0A;
