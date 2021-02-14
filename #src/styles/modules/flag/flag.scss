@@ -4,5 +4,7 @@
    // .flag__col
 
    &__col {
+      display: flex;
+      flex-direction: column;
    }
 }

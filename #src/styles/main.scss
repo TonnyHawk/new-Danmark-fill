@@ -2,6 +2,7 @@
 @import 'basic/mixins';
 @import 'basic/colors';
 
+@import 'layout/grid';
 @import 'layout/utility';
 @import 'layout/sections';
 
@@ -16,6 +17,7 @@ body{
 @import 'modules/flag/flag';
 @import 'modules/slick/slick';
 
+@import 'modules/link/link';
 @import 'modules/btn/btn';
 @import 'modules/nav/nav';
 @import 'modules/hamburger/hamburger.scss';
@@ -24,3 +26,4 @@ body{
 @import 'modules/head-instr/slick';
 @import 'modules/slider/slider';
 @import 'modules/instrs-slider/instrs-slider';
+@import 'modules/promo/promo';

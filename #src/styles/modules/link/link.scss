@@ -1,0 +1,15 @@
+.link {
+   position: relative;
+
+   // .link__text
+
+   &__text{
+      position: relative;
+      width: max-content;
+   }
+
+   // .link__icon
+
+   &__icon {
+   }
+}
